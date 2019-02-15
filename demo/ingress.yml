@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: nginx
+  labels:
+    app: nginx
+  namespace: demo
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+spec:
+  rules:
+    - host: demo.daleaws.co.uk
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: nginx
+              servicePort: http
