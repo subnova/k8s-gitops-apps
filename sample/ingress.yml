@@ -5,6 +5,8 @@ metadata:
   labels:
     app: nginx
   namespace: sample
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
 spec:
   rules:
     - host: sample.daleaws.co.uk
